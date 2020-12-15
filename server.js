@@ -14,7 +14,9 @@ app.use(express.json());
 
 // Restaurant (DATA)
 // =============================================================
-
+app.get("/", function (req, res) {
+  res.send("Hello Pod 8!");
+});
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function () {
