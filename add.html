@@ -67,7 +67,7 @@
                   class="btn btn-primary btn-md"
                   id="add-btn"
                 >
-                  <span class="fa fa-fire"></span> Add to the Force
+                  <span class="fa fa-fire"></span> Add Reservation
                 </button>
               </div>
             </div>
@@ -76,6 +76,10 @@
       </div>
     </div>
 
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
     <script type="text/javascript">
       // Question: What does this code do?
       $("#add-btn").on("click", function (event) {
@@ -88,7 +92,7 @@
         };
 
         // Question: What does this code do??
-        $.post("/tables", newReservation).then(function (data) {
+        $.post("/api/tables", newReservation).then(function (data) {
           console.log("add.html", data);
           alert("Adding reservation...");
         });

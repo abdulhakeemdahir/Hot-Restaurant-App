@@ -8,6 +8,14 @@ var path = require("path");
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+const database = [{
+  name: 'Test',
+  number: 'Test',
+  tableSize: 'Test',
+  uniqueId: 'Test',
+}]
+
+
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -25,6 +33,16 @@ app.get("/reservations", function (req, res) {
 app.get("/tables", function (req, res) {
   res.sendFile(path.join(__dirname, 'tables.html'));
 });
+
+app.post('/api/tables', (req, res) => {
+  const newReservation = req.body
+
+  database.push(newReservation)
+
+  res.json(newReservation)
+})
+
+
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function () {
