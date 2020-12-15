@@ -80,15 +80,15 @@
       // Question: What does this code do?
       $("#add-btn").on("click", function (event) {
         event.preventDefault();
-        var newCharacter = {
+        const newReservation = {
           name: $("#name").val().trim(),
-          role: $("#role").val().trim(),
-          age: $("#age").val().trim(),
-          forcePoints: $("#force-points").val().trim(),
+          number: $("#number").val().trim(),
+          tableSize: $("#table-size").val().trim(),
+          uniqueId: $("#unique-id").val().trim(),
         };
 
         // Question: What does this code do??
-        $.post("/api/", newCharacter).then(function (data) {
+        $.post("/tables", newReservation).then(function (data) {
           console.log("add.html", data);
           alert("Adding reservation...");
         });
