@@ -41,18 +41,18 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="role">Role</label>
-                  <input type="text" class="form-control" id="role" />
+                  <label for="number">Number</label>
+                  <input type="text" class="form-control" id="number" />
                 </div>
 
                 <div class="form-group">
-                  <label for="age">Age</label>
-                  <input type="text" class="form-control" id="age" />
+                  <label for="email">Email</label>
+                  <input type="text" class="form-control" id="email" />
                 </div>
 
                 <div class="form-group">
-                  <label for="force-points">Force Points</label>
-                  <input type="text" class="form-control" id="force-points" />
+                  <label for="unique-id">Unique ID</label>
+                  <input type="text" class="form-control" id="unique-id" />
                 </div>
               </form>
               <br />
@@ -83,9 +83,9 @@
         };
 
         // Question: What does this code do??
-        $.post("/api/characters", newCharacter).then(function (data) {
+        $.post("/api/", newCharacter).then(function (data) {
           console.log("add.html", data);
-          alert("Adding character...");
+          alert("Adding reservation...");
         });
       });
     </script>
