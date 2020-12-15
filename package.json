@@ -1,0 +1,24 @@
+{
+  "name": "Hot-Restaurant-App",
+  "version": "1.0.0",
+  "description": "Class Activity 11",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdulhakeemdahir/Hot-Restaurant-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdulhakeemdahir/Hot-Restaurant-App/issues"
+  },
+  "homepage": "https://github.com/abdulhakeemdahir/Hot-Restaurant-App#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  }
+}
