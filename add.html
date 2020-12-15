@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Star Wars - Express</title>
+    <title>Hot Restaurant</title>
     <!-- Latest compiled and minified CSS & JS -->
     <link
       rel="stylesheet"
@@ -18,12 +18,17 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Star Wars Express</h1>
-        <h3>The greatest resource in the galaxy for Star Wars statistics!</h3>
+        <h1>Make Your Reservation</h1>
+        <h3>Hurry we only have 5 tables!</h3>
         <hr />
+        <a href="/tables"
+          ><button class="btn btn-danger btn-lg">
+            <span class="fa fa-eye"></span> View Tables
+          </button></a
+        >
         <a href="/"
           ><button class="btn btn-danger btn-lg">
-            <span class="fa fa-eye"></span> View Characters
+            <span class="fa fa-eye"></span> Home
           </button></a
         >
       </div>
@@ -31,7 +36,7 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3><strong>Add Characters</strong></h3>
+              <h3><strong>Add Reservations</strong></h3>
             </div>
             <div class="card-body">
               <form method="POST" role="form">
@@ -46,8 +51,8 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="text" class="form-control" id="email" />
+                  <label for="table-size">Table Size</label>
+                  <input type="text" class="form-control" id="table-size" />
                 </div>
 
                 <div class="form-group">
@@ -75,15 +80,15 @@
       // Question: What does this code do?
       $("#add-btn").on("click", function (event) {
         event.preventDefault();
-        var newCharacter = {
+        const newReservation = {
           name: $("#name").val().trim(),
-          role: $("#role").val().trim(),
-          age: $("#age").val().trim(),
-          forcePoints: $("#force-points").val().trim(),
+          number: $("#number").val().trim(),
+          tableSize: $("#table-size").val().trim(),
+          uniqueId: $("#unique-id").val().trim(),
         };
 
         // Question: What does this code do??
-        $.post("/api/", newCharacter).then(function (data) {
+        $.post("/tables", newReservation).then(function (data) {
           console.log("add.html", data);
           alert("Adding reservation...");
         });
